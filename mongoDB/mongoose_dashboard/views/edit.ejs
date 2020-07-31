@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Editing <%= otter._id %>'s Information!</title>
+    </head>
+    <body>
+        <a href='/'>Go back</a>
+        <h1>Editing <%= otter.name %>'s Information!</h1>
+        <form action ='/<%= otter._id %>/update' method='post'>
+            <input type='text' name ='name' value='<%= otter.name %>'><br>
+            <input type='number' name ='age' value='<%= otter.age %>'><br>
+            <input type='text' name ='color' value='<%= otter.color %>'><br>
+            <input type='submit' value='Edit'>
+        </form>
+    </body>
+</html>

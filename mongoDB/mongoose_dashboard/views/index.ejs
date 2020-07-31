@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Otter Dashboard</title>
+    </head>
+    <body>
+        <h1>Hello World! This is an Otter Dashboard</h1>
+        <p>These are all the otters!</p>
+        <a href ='/otter/new'>Add new otter!</a>
+        <hr>
+        <% for(let otter of otters) { %>
+            <p>Name: <%= otter.name %> </p>
+            <p>Age: <%= otter.age %> </p>
+            <p>Color: <%= otter.color %> </p>
+            <form action ='/<%= otter._id%>/view'>
+                <input type='submit' value='View'>
+            </form>
+            <form action ='/<%= otter._id%>/edit'>
+                <input type='submit' value="Edit">
+            </form>
+            <form action ='/<%=otter._id%>/delete' method='post'>
+                <input type='submit' value='Delete'>
+            </form>
+            <hr>
+        <% } %>
+    </body>
+</html>
